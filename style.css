@@ -39,7 +39,6 @@ p {
 #wrapper {
   max-width: 900px;
   margin: 0 auto;
-  background: var(--container-bg);
 }
 
 .common__section-style {
@@ -48,6 +47,7 @@ p {
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   display: grid;
   row-gap: 1.6rem;
+  background: var(--container-bg);
 }
 
 .header {
@@ -140,4 +140,39 @@ p {
 }
 .find__box a:hover::after {
   width: 100%;
+}
+
+.contact__form {
+  margin-top: 24px;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+}
+.form__group:not(:last-child) {
+  margin-bottom: 16px;
+}
+.form__group label {
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding-bottom: 4px;
+}
+.form__group input {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  outline: none;
+  font-size: 1.6rem;
+  width: 100%;
+}
+.form__group textarea {
+  width: 100%;
+  padding: 8px 16px;
+  font-size: 1.6rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */
