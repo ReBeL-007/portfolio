@@ -16,6 +16,16 @@
 html {
   font-size: 62.5%;
 }
+@media (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 400px) {
+  html {
+    font-size: 49%;
+  }
+}
 
 body {
   font-size: 1.6rem;
@@ -53,6 +63,11 @@ p {
 .header {
   display: flex;
   gap: 1.6rem;
+}
+@media (max-width: 454px) {
+  .header {
+    flex-direction: column;
+  }
 }
 .header h1 {
   font-size: 4.8rem;
@@ -104,7 +119,7 @@ p {
   gap: 1.6rem;
 }
 .stack__list .stack__container a {
-  width: 150px;
+  width: 15rem;
 }
 .stack__list .stack__container a img {
   width: 100%;
@@ -175,4 +190,31 @@ p {
   border: none;
   outline: none;
   border-radius: 5px;
+}
+
+.actions {
+  text-align: end;
+}
+.actions button:first-child {
+  margin-right: 8px;
+  background: transparent;
+  outline: 1px solid var(--profile-border);
+}
+
+.btn {
+  padding: 0.8rem 1.6rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  line-height: 2;
+  border: 1px solid rgb(240, 240, 240);
+  transition: all 0.3s;
+}
+@media (min-width: 400px) {
+  .btn {
+    width: 13rem;
+  }
+}
+.btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }/*# sourceMappingURL=style.css.map */

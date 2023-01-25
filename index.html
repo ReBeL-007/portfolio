@@ -116,33 +116,79 @@
       <!-- contact us -->
       <section class="common__section-style contact__form">
         <h2 class="title">Send Message</h2>
-        <form action="#">
+        <form action="#" name="google-sheet" method="post">
           <div class="form__group">
-            <label for="full name" class="form__label">Full Name</label>
+            <label for="full_name" class="form__label">Name</label>
             <input
               type="text"
               class="form__input"
               placeholder="full name"
-              id="full name"
+              id="full_name"
+              name="fullName"
               required
             />
           </div>
           <div class="form__group">
-            <label for="full name" class="form__label">Full Name</label>
+            <label for="email" class="form__label">Email</label>
             <input
               type="email"
               class="form__input"
-              placeholder="email"
+              placeholder="joe@gmail.com"
               id="email"
+              name="email"
               required
             />
           </div>
           <div class="form__group">
-            <label for="full name" class="form__label">Full Name</label>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <label for="number" class="form__label">Phone Number</label>
+            <input
+              type="number"
+              class="form__input"
+              id="number"
+              name="number"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <label for="message" class="form__label">Message</label>
+            <textarea
+              name="message"
+              id=""
+              cols="30"
+              rows="10"
+              id=""
+              message
+            ></textarea>
+          </div>
+          <div class="actions">
+            <button class="btn">Cancel</button>
+            <button type="submit" class="btn">Send Message</button>
           </div>
         </form>
       </section>
     </main>
+
+    <script defer>
+      const scriptURL = `https://script.google.com/macros/s/AKfycbzTyhqRJ0w3_RDPHU9lT3eQnlYf9whBoOMbtMjZMR0FToNaIHIphAHrqvSj7JTJGhhR/exec`;
+      const form = document.forms["google-sheet"];
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            alert("Your message is sent");
+            document.querySelectorAll(".form__input").forEach((el) => {
+              el.value = "";
+            });
+          })
+          .catch((error) => {
+            alert(
+              "Could not send message. Please try again later or contact through the provided phone number"
+            );
+            // document.querySelectorAll(".form__input").forEach((el) => {
+            //   el.value = "";
+            // });
+          });
+      });
+    </script>
   </body>
 </html>

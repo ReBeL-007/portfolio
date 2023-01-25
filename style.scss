@@ -15,6 +15,13 @@
 
 html {
   font-size: 62.5%;
+
+  @media (max-width: 600px) {
+    font-size: 50%;
+  }
+  @media (max-width: 400px) {
+    font-size: 49%;
+  }
 }
 
 body {
@@ -54,6 +61,10 @@ p {
 .header {
   display: flex;
   gap: 1.6rem;
+
+  @media (max-width: 454px) {
+    flex-direction: column;
+  }
 
   h1 {
     font-size: 4.8rem;
@@ -110,7 +121,7 @@ p {
     gap: 1.6rem;
 
     a {
-      width: clamp(100px, 150px, 190px);
+      width: clamp(10rem, 15rem, 19rem);
 
       img {
         width: 100%;
@@ -199,5 +210,33 @@ p {
     border: none;
     outline: none;
     border-radius: 5px;
+  }
+}
+
+.actions {
+  text-align: end;
+  button:first-child {
+    margin-right: 8px;
+    background: transparent;
+    outline: 1px solid var(--profile-border);
+  }
+}
+
+.btn {
+  padding: 0.8rem 1.6rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  line-height: 2;
+  border: 1px solid rgb(240, 240, 240);
+
+  @media (min-width: 400px) {
+    width: clamp(12rem, 13rem, 15rem);
+  }
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   }
 }
