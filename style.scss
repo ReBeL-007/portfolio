@@ -120,6 +120,10 @@ p {
     flex-wrap: wrap;
     gap: 1.6rem;
 
+    @media (max-width: 450px) {
+      flex-direction: column;
+    }
+
     a {
       width: clamp(10rem, 15rem, 19rem);
 
@@ -140,6 +144,11 @@ p {
     display: flex;
     gap: 1.6rem;
     align-items: center;
+  }
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+    align-items: flex-start !important;
   }
 
   a {
@@ -220,6 +229,11 @@ p {
     background: transparent;
     outline: 1px solid var(--profile-border);
   }
+
+  button:last-child {
+    background: #55c57a;
+    color: #fff;
+  }
 }
 
 .btn {
@@ -230,8 +244,8 @@ p {
   line-height: 2;
   border: 1px solid rgb(240, 240, 240);
 
-  @media (min-width: 400px) {
-    width: clamp(12rem, 13rem, 15rem);
+  @media (min-width: 425px) {
+    width: clamp(12rem, 15rem, 15rem);
   }
   transition: all 0.3s;
 

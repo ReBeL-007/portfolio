@@ -118,6 +118,11 @@ p {
   flex-wrap: wrap;
   gap: 1.6rem;
 }
+@media (max-width: 450px) {
+  .stack__list .stack__container {
+    flex-direction: column;
+  }
+}
 .stack__list .stack__container a {
   width: 15rem;
 }
@@ -133,6 +138,12 @@ p {
   display: flex;
   gap: 1.6rem;
   align-items: center;
+}
+@media (max-width: 450px) {
+  .find__box {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
 }
 .find__box a {
   gap: 0.8rem;
@@ -200,6 +211,10 @@ p {
   background: transparent;
   outline: 1px solid var(--profile-border);
 }
+.actions button:last-child {
+  background: #55c57a;
+  color: #fff;
+}
 
 .btn {
   padding: 0.8rem 1.6rem;
@@ -210,9 +225,9 @@ p {
   border: 1px solid rgb(240, 240, 240);
   transition: all 0.3s;
 }
-@media (min-width: 400px) {
+@media (min-width: 425px) {
   .btn {
-    width: 13rem;
+    width: 15rem;
   }
 }
 .btn:hover {
